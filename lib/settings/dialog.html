@@ -1,14 +1,13 @@
-<div id="dialog" id="settings-dialog">
+<div id="dialog" class="settings-dialog">
   <div id="dialog-wrapper">
     <div id="dialog-content">
-      <h1>Settings</h1>
+      <h1>Connection Settings</h1>
       <a href="#" id="dialog-close"></a>
       <div id="dialog-contents">
-        <h2>
-          Connections
-          <button id="add-connection">+</button>
-          <button id="save-connections">save</button>
-        </h2>
+        <div class="menu">
+          <button id="add-connection" class="bt-action" type="button">Add a connection</button>
+          <!-- <button id="save-connections">save</button> -->
+        </div>
         <ul id="connections">
           {{!connections}}
         </ul>
