@@ -1,21 +1,39 @@
 <li>
-  <dl>
-    <dt>Server:</dt>
-    <dd><input type="text" name="host" value="{{host}}"></dd>
-    <dt>Nickname:</dt>
-    <dd><input type="text" name="nickname" value="{{nickname}}"></dd>
-    <dt>Realname:</dt>
-    <dd><input type="text" name="realname" value="{{realname}}"></dd>
-    <dt>Password:</dt>
-    <dd><input type="text" name="password" value="{{password}}"></dd>
-    <dt>Port:</dt>
-    <dd><input type="number" name="port" value="{{port}}"></dd>
-    <dt>Channels</dt>
-    <dd>
-      <ul class="channels">
-        {{!channels}}
-      </ul>
-      <button class="add-channel" id="add-channel-{{id}}">add</button>
-    </dd>
-  </dl>
+  <h2>{{host}}</h2>
+  <button type="reset" form="connection-{{id}}">remove</button>
+  <div class="wrapper">
+    <form id="connection-{{id}}" >
+      <fieldset>
+        <legend>Server info</legend>
+        <p>
+          <label for="host-{{id}}">Server:</label>
+          <input type="text" name="host" id="host-{{id}}" value="{{host}}">
+        </p>
+        <p>
+          <label for="nickname-{{id}}">Nickname:</label>
+          <input type="text" name="nickname" id="nickname-{{id}}" value="{{nickname}}">
+        </p>
+        <p>
+          <label for="realname-{{id}}">Realname:</label>
+          <input type="text" name="realname" id="realname-{{id}}" value="{{realname}}">
+        </p>
+        <p>
+          <label for="password-{{id}}">Password:</label>
+          <input type="password" name="password" id="password-{{id}}" value="{{password}}">
+        </p>
+        <p>
+          <label for="port-{{id}}">Port:</label>
+          <input type="number" name="port" id="port-{{id}}" value="{{port}}">
+        </p>
+      </fieldset>
+      <fieldset class="channels">
+        <legend>Channels</legend>
+        <ul>
+          {{!channels}}
+        </ul>
+        <button class="add-channel" id="add-channel-{{id}}" type="button">add one more</button>
+      </fieldset>
+      <button type="submit">save connection</button>
+    </form>
+  </div>
 </li>
