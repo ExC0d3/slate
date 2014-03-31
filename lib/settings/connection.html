@@ -1,7 +1,6 @@
 <li>
   <h2>{{host}}</h2>
   <button type="reset" form="connection-{{id}}">remove</button>
-  <button type="submit" form="connection-{{id}}">save</button>
   <div class="wrapper">
     <form id="connection-{{id}}" >
       <fieldset>
@@ -32,7 +31,7 @@
         <ul>
           {{!channels}}
         </ul>
-        <button class="add-channel" id="add-channel-{{id}}">add one more</button>
+        <button class="add-channel" id="add-channel-{{id}}" type="button">add one more</button>
       </fieldset>
       <button type="submit">save connection</button>
     </form>

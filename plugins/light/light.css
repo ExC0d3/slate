@@ -431,6 +431,11 @@ body.showing-dialog #dialog-contents {
   -webkit-animation-fill-mode: forwards;
 }
 
+.settings-dialog .menu button{
+  display:block;
+  margin: 6px 0;
+}
+
 .settings-dialog h2 {
   position: relative;
   z-index: 1;
@@ -442,9 +447,37 @@ body.showing-dialog #dialog-contents {
   background-color: #fff;
 }
 
+.settings-dialog h2:not(:empty):after{
+  font-family: "slate";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+
+  content: '\e812';
+  opacity: 0;
+  -webkit-transform: scale(0.3);
+  -webkit-transition: -webkit-transform 0.2s ease-in, opacity 0.2s linear;
+}
+
+.settings-dialog .saved h2:not(:empty):after{
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(.41,.84,.87,1.63), opacity 0.3s linear;
+}
+
 .settings-dialog h2:empty:after{
   content: '(empty)';
 }
+
 
 .settings-dialog li {
   list-style: none;
@@ -453,9 +486,19 @@ body.showing-dialog #dialog-contents {
 .settings-dialog .channels{
   position: relative;
 }
+
+.settings-dialog li{
+  position: relative;
+  margin: 6px 0;
+}
 .settings-dialog .add-channel{
+  display: block;
+  margin-left: 30%;
+}
+.settings-dialog .remove-channel{
+  font-family: slate;
   position: absolute;
-  bottom: 5px;
+  bottom: 6px;
   right:5px;
 }
 
@@ -471,25 +514,18 @@ body.showing-dialog #dialog-contents {
   -webkit-transition: right 0.3s ease-out, opacity 0.3s linear;;
   opacity: 1;
 }
-.settings-dialog h2 ~ [type=submit]{
+
+.settings-dialog h2 + [type=reset]{
   right: -5px;
-  -webkit-transition-delay: 0.1s, 0.1s;
 }
-.settings-dialog .focused h2 ~ [type=submit]{
+.settings-dialog .focused h2 + [type=reset]{
   right: 5px;
-}
-.settings-dialog h2 ~ [type=reset]{
-  right: 50px;
-}
-.settings-dialog .focused h2 ~ [type=reset]{
-  right: 60px;
-  -webkit-transition-delay: 0.1s, 0.1s;
 }
 
 
 .settings-dialog form [type=submit]{
   display: block;
-  margin: 15px auto;
+  margin: 15px 0 15px auto
 }
 
 button{
