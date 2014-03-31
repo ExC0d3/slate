@@ -424,6 +424,11 @@ body.showing-dialog #dialog-contents {
   position: absolute;
   top: 75px;
   left: 35px;
+  opacity: 0;
+}
+.showing-dialog .settings-dialog .menu {
+  -webkit-animation: dialog 0.4s ease-in-out 0.3s;
+  -webkit-animation-fill-mode: forwards;
 }
 
 .settings-dialog h2 {
